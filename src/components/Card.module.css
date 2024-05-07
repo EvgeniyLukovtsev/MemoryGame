@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 15px;
+  height: 28px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #eabd55;
+  align-items: center;
+}
+
+.cards {
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+  gap: 10px;
+}
+
+.card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.cardActive .inner {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  border-radius: 2px;
+  transform: rotateY(180deg);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.card .front_img,
+.card .back_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card .front_img {
+  border-radius: 2px solid #d9d91d;
+  background: #e3b03967;
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 70%;
+  height: 90%;
+}
+
+.card .back_img {
+  background: #e3b039;
+  font-size: 100px;
+  transition: 0.3s ease all;
+}
+
+.card .back_img:hover,
+.button_restart:hover {
+  background: #dba8b1;
+  transform: scale(1.02);
+}
+
+.button_restart {
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #eabd55;
+  transition: 0.3s ease all;
+}
+
+.number_of_strokes {
+  font-size: 20px;
+  font-weight: bold;
+}
